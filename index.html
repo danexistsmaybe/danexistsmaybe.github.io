@@ -4,7 +4,15 @@
 	<title><3</title>
 </head>
 <body id='bg'>
-	<marquee scrollamount=50><center><span class="bigheader">I <3 Emma</span></center></marquee>
+	<marquee  scrollamount=50><center>
+		<span class="bigheader button" 
+			id="a" 
+			onclick="document.getElementsByClassName('button')[0].style.fontStyle = 'italic';
+					setTimeout(function() {window.location.replace('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+					document.getElementsByClassName('button')[0].style.fontStyle = 'normal';},700);">
+			I <3 Emma
+		</span>
+	</center></marquee>
 	
 	
 <script>
@@ -20,6 +28,7 @@ setInterval(function () {
 	}
 	i++;
 }, 20);
+
 
 </script>	
 </body>
