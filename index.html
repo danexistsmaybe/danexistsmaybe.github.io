@@ -1,9 +1,26 @@
-<doctype html>
+<html>
 <head>
 	<link rel="stylesheet" href="style.css">
 	<title><3</title>
 </head>
-<body>
+<body id='bg'>
 	<marquee scrollamount=50><center><span class="bigheader">I <3 Emma</span></center></marquee>
+	
+	
+<script>
+var bg=document.getElementById('bg');
+var i=0;
+setInterval(function () {
+	if (i%3==0) {
+		bg.style.backgroundColor = 'red';
+	} else if (i%3==1) {
+		bg.style.backgroundColor = 'blue';
+	} else {
+		bg.style.backgroundColor = 'yellow';
+	}
+	i++;
+}, 20);
+
+</script>	
 </body>
 </html>
