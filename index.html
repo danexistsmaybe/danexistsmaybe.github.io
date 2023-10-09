@@ -1,34 +1,24 @@
 <html>
 <head>
 	<link rel="stylesheet" href="style.css">
-	<title><3</title>
+	<title>no</title>
 </head>
 <body id='bg'>
-	<marquee  scrollamount=50><center>
-		<span class="bigheader button" 
-			id="a" 
-			onclick="document.getElementsByClassName('button')[0].style.fontStyle = 'italic';
-					setTimeout(function() {window.location.replace('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
-					document.getElementsByClassName('button')[0].style.fontStyle = 'normal';},700);">
-			I <3 Emma
-		</span>
-	</center></marquee>
+	<h1 id="a">Haiii</h1>
 	
 	
 <script>
-var bg=document.getElementById('bg');
 var i=0;
-setInterval(function () {
+setInterval(function() {
 	if (i%3==0) {
-		bg.style.backgroundColor = 'red';
+		document.getElementById("bg").style.backgroundColor = "red";
 	} else if (i%3==1) {
-		bg.style.backgroundColor = 'blue';
+		document.getElementById("bg").style.backgroundColor = "orange";
 	} else {
-		bg.style.backgroundColor = 'yellow';
+		document.getElementById("bg").style.backgroundColor = "yellow";
 	}
-	i++;
-}, 20);
-
+	i+=1;
+},20);
 
 </script>	
 </body>
