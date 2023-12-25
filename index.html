@@ -1,26 +1,36 @@
 <html>
 <head>
 	<link rel="stylesheet" href="style.css">
-	<title>no</title>
-	
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">$(document).ready(function(){
-			console.log("aa");
-			$("#test").fadeOut();
-		});</script>
+	<title>Welcome</title>
 	
 </head>
-<body id='bg'>
-	
-	
-	<div id="test">
-		
-	
+<body id='bg' class="indexbody">
+	<div class="nav">
+		<div id="gohome" class="navitem">Home</div>
+		<div class="navitem">Page1</div>
+		<div class="navitem">Page2</div>
+
+		<div class="navaccount">
+			<span class="navlogin">Login</span>
+			<span class="navregister">Register</span>
+		</div>
 	</div>
 	
+	<div class="welcome">
+		<span class="boldhead">Welcome to my website.</span>
+		<span class="bodytext">It's not much to look at right now, but I have big plans for the future. For now, here is my <a href="https://www.linkedin.com/in/daniel-evans-61bb73169/">LinkedIn</a> and <a href="https://github.com/danexistsmaybe">GitHub</a>, and, if you would like to contact me directly, you can check the footer for my info.</span>
+	</div>
+
+	<div class="footer">
+		<div class="footeritem">Contact:</div>
+		<div class="footeritem">danevans264@gmail.com</div>
+		<div class="footeritem">(507)696-9012</div>
+	</div>
 	
 <script>
-
+document.getElementById("gohome").onclick = function() {
+	window.location.replace("https://danexistsmaybe.github.io/");
+}
 
 </script>	
 </body>
