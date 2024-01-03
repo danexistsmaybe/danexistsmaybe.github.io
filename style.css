@@ -82,6 +82,26 @@
 	flex: 1;
 }
 
+/* Poem Page */
+.poems {
+	display: flex;
+	flex-direction: column;
+	align-items: left;
+	width: 70vw;
+	margin: 0 15vw;
+	flex: 1;
+}
+
+.poemtitle {
+	font-size: 36px;
+	font-family: garamond;
+	font-weight: bold;
+}
+
+.poemtext {
+	font-size: 20px;
+	font-family: garamond;
+}
 
 /* Website Theming */
 div,p,span,a {
@@ -91,6 +111,11 @@ div,p,span,a {
 
 a:hover {
 	font-weight: bold;
+}
+
+.unstyledlink {
+	font-style: normal;
+	text-decoration: none;
 }
 
 body {
