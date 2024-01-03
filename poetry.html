@@ -1,0 +1,47 @@
+<html>
+<head>
+	<link rel="stylesheet" href="style.css">
+	<title>Poetry</title>
+	
+</head>
+<body id='bg' class="indexbody">
+	<div class="nav">
+		<div id="gohome" class="navitem">Home</div>
+		<div class="navitem"><a class="unstyledlink" href="poetry.html">Poetry</a></div>
+		<div class="navitem">Page2</div>
+
+		<div class="navaccount">
+			<span class="navlogin">Login</span>
+			<span class="navregister">Register</span>
+		</div>
+	</div>
+	<div id="poems" class="poems">
+	
+    </div>
+
+	<div class="footer">
+		<div class="footeritem">Contact:</div>
+		<div class="footeritem">danevans264@gmail.com</div>
+		<div class="footeritem">(507)696-9012</div>
+	</div>
+	
+<script>
+document.getElementById("gohome").onclick = function() {
+	window.location.replace("https://danexistsmaybe.github.io/");
+}
+
+let towrite="";
+fetch("https://danexistsmaybe.github.io/poems.txt")
+  .then((res) => res.text())
+  .then((text) => {
+    for (let line in text.split('\n')) {
+        towrite += (text.split('\n')[line] + "<br>");
+    }
+    document.getElementById("poems").innerHTML = towrite;
+   })
+  .catch((e) => console.error(e));
+
+  
+</script>	
+</body>
+</html>
