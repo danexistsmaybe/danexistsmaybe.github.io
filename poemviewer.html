@@ -15,7 +15,7 @@
 			<span class="navregister">Register</span>
 		</div>
 	</div>
-	<ol id="poems" class="poems">
+	<ol id="poemviewer" class="poemviewer">
 	
     </ol>
 
@@ -30,15 +30,19 @@ document.getElementById("gohome").onclick = function() {
 	window.location.replace("https://danexistsmaybe.github.io/");
 }
 
-let towrite="";
+let params = new URLSearchParams(window.location.search);
+let title = params.get("title");
+let towrite="<span class='poemtitle'>"+title+"</span>\n";
 fetch("https://danexistsmaybe.github.io/poems.txt")
   .then((res) => res.text())
   .then((text) => {
     for (let poem in text.split('__TITLE__')) {
         if (poem==0) continue;
-        towrite += ("<li><a class='unstyledlink' href=\"poemviewer.html?title=" + text.split('__TITLE__')[poem].split('\n')[0] + "\">" + text.split('__TITLE__')[poem].split('\n')[0] + "</a></li>\n");
+        if (text.split('__TITLE__')[poem].split('\n')[0].toLowerCase()==title.toLowerCase()) {
+            towrite+="<span class='poemtext'>"+text.split('__TITLE__')[poem].split('\n')[1]+"</span>\n";
+        }
     }
-    document.getElementById("poems").innerHTML = towrite;
+    document.getElementById("poemviewer").innerHTML = towrite;
    })
   .catch((e) => console.error(e));
 
