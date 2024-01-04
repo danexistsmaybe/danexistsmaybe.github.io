@@ -100,13 +100,13 @@
 
 .poemtitle {
 	font-size: 36px;
-	font-family: garamond;
+	font-family: garamond, serif;
 	font-weight: bold;
 }
 
 .poemtext {
 	font-size: 20px;
-	font-family: garamond;
+	font-family: garamond, serif;
 }
 
 .poemviewer {
