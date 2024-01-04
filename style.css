@@ -68,6 +68,11 @@
 	padding: 20px;
 }
 
+.footericon {
+	width: 20px;
+	height: 20px;
+}
+
 /* Index Page */
 .indexbody {
 	background-image: linear-gradient(to bottom right,rgb(203, 91, 0),rgb(88, 0, 104));
