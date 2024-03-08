@@ -29,7 +29,7 @@ markup = {
 
 choice = input("Enter 0 to add a poem, 1 to remove a poem.\n")
 if choice=='0':
-    poem = open("addpoem.txt",'r').read()
+    poem = open("addpoem.txt",'r',encoding="utf-8").read()
     print("Poem read.")
 
     if "__TITLE__" in poem:
@@ -48,7 +48,7 @@ if choice=='0':
             toappend.append('<br>')
         else:
             toappend.append(char)
-    file = open("poems.txt",'a')
+    file = open("poems.txt",'a',encoding='utf-8')
     file.write("".join(toappend))
     file.close()
     print("Done.")
