@@ -1,6 +1,5 @@
 
 
-
 /* Nav Styles */
 .nav {
 	display: flex;
@@ -123,7 +122,7 @@
 
 /* Website Theming */
 div,p,span,a,li,ol {
-	font-family: caslon arial;
+	font-family: helvetica, sans-serif;
 	color: white;
 }
 
