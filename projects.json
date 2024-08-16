@@ -2,7 +2,7 @@
 	{
 		"title": "FoodSnap",
 		"description": "A food project",
-		"skills": ["NodeJS", "Python", "RestAPI","ReactNative"],
+		"skills": ["NodeJS", "Python", "REST API","ReactNative"],
 		"image": "https://danexistsmaybe.github.io/Stuff/foodsnap.png",
 		"link": "https://github.com/Phrygian-Five/FoodSnap"
 	},
