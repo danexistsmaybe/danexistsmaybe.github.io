@@ -31,7 +31,7 @@
 		"title": "This Website I Suppose",
 		"description": "A website project",
 		"skills": ["Google Cloud Dev", "Javascript", "HTML/CSS"],
-		"image": "",
+		"image": "https://danexistsmaybe.github.io/Stuff/website.png",
 		"link": "https://github.com/danexistsmaybe/Website2.0"
 	}
 ]
