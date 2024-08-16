@@ -3,13 +3,35 @@
 		"title": "FoodSnap",
 		"description": "A food project",
 		"skills": ["NodeJS", "Python", "RestAPI","ReactNative"],
-		"image": "https://i.pinimg.com/736x/4c/a3/1e/4ca31e5343e89bc550044caec29543e6.jpg",
-		"link": ""
+		"image": "https://danexistsmaybe.github.io/Stuff/foodsnap.png",
+		"link": "https://github.com/Phrygian-Five/FoodSnap"
 	},
 	{
 		"title": "Custom VST",
 		"description": "A VST project",
 		"skills": ["C++", "Python", "VST SDK"],
-		"image": "https://i.pinimg.com/736x/4c/a3/1e/4ca31e5343e89bc550044caec29543e6.jpg"
+		"image": "https://danexistsmaybe.github.io/Stuff/vst.png",
+		"link": ""
+	},
+	{
+		"title": "Robot Navigation",
+		"description": "A robot project",
+		"skills": ["Python", "C++", "ROS", "Linux"],
+		"image": "https://danexistsmaybe.github.io/Stuff/robot.png",
+		"link": "https://github.com/AMR-Navigation/Navigation"
+	},
+	{
+		"title": "AnyFile",
+		"description": "A file project",
+		"skills": ["C++", "ReactNative", "Encoding/Decoding"],
+		"image": "https://i.pinimg.com/736x/4c/a3/1e/4ca31e5343e89bc550044caec29543e6.jpg",
+		"link": ""
+	},
+	{
+		"title": "This Website I Suppose",
+		"description": "A website project",
+		"skills": ["Google Cloud Dev", "Javascript", "HTML/CSS"],
+		"image": "",
+		"link": "https://github.com/danexistsmaybe/Website2.0"
 	}
 ]
