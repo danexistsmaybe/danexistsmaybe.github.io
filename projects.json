@@ -14,6 +14,13 @@
 		"link": ""
 	},
 	{
+		"title": "qSearch",
+		"description": "Implementations of Grover's Quantum Algorithm.",
+		"skills": ["Python","Qiskit","Quantum Circuits","Quantum Mechanics"],
+		"image": "https://miro.medium.com/v2/resize:fit:1400/1*nn0ze6W_S6vLqGsPEJDoGQ.png",
+		"link": "https://github.com/danexistsmaybe/qSearch"
+	},
+	{
 		"title": "Robot Navigation",
 		"description": "A robot project",
 		"skills": ["Python", "C++", "ROS", "Linux"],
