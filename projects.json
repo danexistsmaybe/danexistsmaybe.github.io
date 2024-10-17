@@ -1,21 +1,21 @@
 [
 	{
 		"title": "FoodSnap",
-		"description": "A food project",
+		"description": "A nutrition app that won first place in the OleHacks hackathon. Using the OpenAI REST API, the app, built on the React Native framework, analyzes an image taken by the user to determine ingredients present in food. Then, API requests are made to the FDA's nutrition information database, where nutrition data is scraped and delivered to the user. The project was primarily written with Python for the backend, and javascript for the app/frontend.",
 		"skills": ["NodeJS", "Python", "REST API","ReactNative"],
 		"image": "https://danexistsmaybe.github.io/Stuff/foodsnap.png",
 		"link": "https://github.com/Phrygian-Five/FoodSnap"
 	},
 	{
 		"title": "Custom VST",
-		"description": "A VST project",
+		"description": "A custom music plugin developed with the VST software development kit. The project involved extensive interprocess communication on a Windows device, allowing me to get very familiar with the Windows platform as a developer. The plugin takes in sound data and modifies it in real time, capable of producing various effects.",
 		"skills": ["C++", "Python", "VST SDK"],
 		"image": "https://danexistsmaybe.github.io/Stuff/vst.png",
 		"link": ""
 	},
 	{
 		"title": "qSearch",
-		"description": "Implementations of Grover's Quantum Algorithm.",
+		"description": "Our ability to tackle complicated problems with large amounts of data is completely dependent on the algorithms we use and the processing power available. In order to meaningfully expand the limits of what is possible, algorithms must improve: one of the most promising, generalizable advancements in algorithms is Grover’s quantum search algorithm, which is capable of searching a disorganized solution space in O(n1/2) time. Although classical sorting algorithms can allow for even faster lookups, when the limit for a problem becomes size itself and the question becomes “Can we do it at all?” rather than “How fast can we do it?” a fundamentally more efficient approach is required. In the interest of making Grover’s algorithm more accessible, as well as assessing it’s current viability, this project will focus on implementing it on real, public IBM quantum computers, visualizing and analyzing the results in comparison to classical search algorithms, documenting the reduction process that would apply Grover’s algorithm to other search problems, and, finally, experimenting with adjustments in an attempt to find leverageable modifications to improve outcomes. ",
 		"skills": ["Python","Qiskit","Quantum Circuits","Quantum Mechanics"],
 		"image": "https://miro.medium.com/v2/resize:fit:1400/1*nn0ze6W_S6vLqGsPEJDoGQ.png",
 		"link": "https://github.com/danexistsmaybe/qSearch"
