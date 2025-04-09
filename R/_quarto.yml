@@ -12,12 +12,12 @@ website:
         text: Poetry
       - href: https://danexistsmaybe.github.io/R/docs
         text: R Portfolio
-      - href: https://danexistsmaybe.github.io/R/docs
+      - href: about.qmd
         text: About
 
 format:
   html:
-    theme: cosmo
+    theme: morph
     css: styles.css
     toc: true
     page-layout: full
