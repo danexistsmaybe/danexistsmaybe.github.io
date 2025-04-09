@@ -12,8 +12,10 @@ website:
         text: Poetry
       - href: https://danexistsmaybe.github.io/R/docs
         text: R Portfolio
-      - href: about.qmd
-        text: About
+      - href: mini1.qmd
+        text: Mini Project 1
+      - href: mini2.qmd
+        text: Mini Project 2
 
 format:
   html:
