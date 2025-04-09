@@ -3,15 +3,17 @@ project:
   output-dir: docs
 
 website:
-  title: "Dan E"
+  title: "Home"
   navbar:
     left:
       - href: https://danexistsmaybe.github.io/
-        text: Home
+        text: Main Site
       - href: https://danexistsmaybe.github.io/poetry.html
         text: Poetry
       - href: https://danexistsmaybe.github.io/R/docs
         text: R Portfolio
+      - href: https://danexistsmaybe.github.io/R/docs
+        text: About
 
 format:
   html:
