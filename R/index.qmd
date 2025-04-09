@@ -1,5 +1,5 @@
 ---
-title: "Dan E"
+#title: "Dan E"
 image: grungehog.JPG
 toc: false
 about: 
@@ -15,6 +15,6 @@ about:
       href: mailto:danevans264@gmail.com
 ---
 
-Welcome!.
+Welcome!
 
 To learn more about me, visit any of the links below.
