@@ -10,7 +10,7 @@ website:
         text: Home
       - href: https://danexistsmaybe.github.io/poetry.html
         text: Poetry
-      - href: https://danexistsmaybe.github.io/R/index.qmd
+      - href: https://danexistsmaybe.github.io/R/docs
         text: R Portfolio
 
 format:
