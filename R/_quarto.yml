@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "R"
+  title: "Dan E"
   navbar:
     left:
       - href: index.qmd
@@ -15,6 +15,4 @@ format:
     theme: cosmo
     css: styles.css
     toc: true
-
-editor: visual
-
+    page-layout: full

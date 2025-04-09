@@ -1,11 +1,20 @@
-s---
-title: "R"
+---
+title: "Dan E"
+image: grungehog.JPG
+toc: false
+about: 
+  template: jolla
+  image-shape: round
+  image-width: 17em
+  links:
+    - text: LinkedIn
+      href: https://www.linkedin.com/in/daniel-evans-61bb73169/
+    - text: GitHub
+      href: https://github.com/danexistsmaybe
+    - text: Email
+      href: mailto:danevans264@gmail.com
 ---
 
-This is a Quarto website.
+Welcome!.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
-
-```{r}
-1 + 1
-```
+To learn more about me, visit any of the links below.
