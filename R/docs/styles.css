@@ -1,0 +1,12 @@
+/* css styles */
+.figure-img {
+  border-radius: 10px;
+  border: darkgrey 2px solid;
+}
+
+.sourceCode {
+  
+  border-radius: 10px;
+  border: darkgrey 2px solid;
+  background-color: rgba(150,150,150,.4);
+}
