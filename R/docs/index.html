@@ -125,7 +125,20 @@ ul.task-list li input[type="checkbox"] {
   round " style="height: 17em; width: 17em;">
  <main class="content column-page" id="quarto-document-content">
 <p>Welcome!</p>
-<p>To learn more about me, visit any of the links below.</p>
+<p>A soon-to-be graduate of St.&nbsp;Olaf College, I am studying <span class="balloon" onmouseover="balloon(event)">Computer Science</span>, Mathematics, English, and Statistics &amp; Data Science.</p>
+<script>
+function balloon(event) {
+  console.log("balloonerism");
+  event.target.style.fontSize = "20px";
+  if (1==1) {
+    var x = 18;
+    setInterval(function() {
+      event.target.style.fontSize = x+"px";
+      x ++;
+    }, 20);
+  }
+}
+</script>
 
 
 </main> 

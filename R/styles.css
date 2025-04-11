@@ -22,3 +22,13 @@
 	top: 0;
 	left: 0;
 }
+
+
+.balloon {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.balloon {
+  cursor: pointer;
+}

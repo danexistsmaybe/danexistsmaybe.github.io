@@ -17,4 +17,23 @@ about:
 
 Welcome!
 
-To learn more about me, visit any of the links below.
+A soon-to-be graduate of St. Olaf College, I am studying <span class="balloon" onmouseover="balloon(event)">Computer Science</span>, Mathematics, English, and Statistics & Data Science. You can find my socials below, or contact me directly at my email address.
+
+
+<script>
+function balloon(event) {
+  console.log("balloonerism");
+  event.target.style.fontSize = "20px";
+  
+  if (1==1) {
+    var x = 18;
+    setInterval(function() {
+      event.target.style.fontSize = x+"px";
+      x ++;
+    }, 20);
+  }
+}
+
+
+
+</script>
