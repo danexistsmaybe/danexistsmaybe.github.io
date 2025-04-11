@@ -18,7 +18,42 @@ library(tidyverse)
 library(dplyr)
 ```
 
-## Getting the data
+
+<script src="rellax.min.js"></script>
+<script>
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);     
+  max = Math.floor(max);    
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+let h = document.documentElement.scrollHeight;
+let w = document.documentElement.scrollWidth;
+for (var i=0; i<100; i+=getRandomInt(1,4)) {
+  
+  let C = document.createElement("div");
+  C.style.backgroundImage = 'url("./clouds/'+i+'.png")';
+  C.style.backgroundSize = 'contain';
+  C.style.backgroundRepeat = 'no-repeat';
+  C.style.height = getRandomInt(100, 500) + "px";
+  C.style.width = getRandomInt(100, 500) + "px";
+  C.style.zIndex = "-5";
+  C.style.top = getRandomInt(50, h - 400) + "px";
+  C.style.left = getRandomInt(-200,w) + "px";
+  C.setAttribute("class", "rellax");
+  C.setAttribute("data-relax-speed", "-"+getRandomInt(2,10));
+  C.style.position = "absolute";
+  
+  document.body.appendChild(C);
+  document.body.style.overflowX = "hidden";
+}
+
+  var rellax = new Rellax('.rellax');
+});
+</script>
+
 ### Introduction
 The data for this mini project was taken from the openFDA API. This API serves public data from the Food and Drug Administration about drugs, devices, and foods. It only has publicly available data, so there are no sensitive personal details. We hope to use this data to show a correlation between demographic information and certain adverse effects. We also want to see if some drugs are more likely to cause serious side effects compared to other drugs, and what reactions are most common.
 
@@ -27,15 +62,15 @@ Thus, we decided to scrape reports about adverse drug effects on patients, and f
 
 ```{r}
 #| message: FALSE
+#| warning: FALSE
 key <- readLines("api_token") # get key
 ```
 
 
-### Querying the FDA Open API
+### Creating a Function that can Query the FDA API
+This function uses the httr2 library to make a single query to the FDA's API. Then, a simple for loop populates a dataset to return.
 ```{r}
 #| message: FALSE
-
-#Function to get data from the API. 2000 - 2020, numObservations <= 1000
 
 get_fda_data <- function(startYear, endYear, numObservations) {
   
@@ -54,7 +89,7 @@ get_fda_data <- function(startYear, endYear, numObservations) {
   ))
   resp <- req_perform(req)
   
-  # if json is desired
+  # make it json
   resp <- resp |>
     resp_body_json()
   
@@ -65,6 +100,7 @@ get_fda_data <- function(startYear, endYear, numObservations) {
   drugName = character()
   drugIndication = character()
   
+  # fill in our vectors
   for(i in 1:numObservations) {
     
     reportId[i-1] <- resp$results[[i]]$safetyreportid
@@ -82,9 +118,11 @@ get_fda_data <- function(startYear, endYear, numObservations) {
     }
     
     if(length(resp$results[[i]]$patient$reaction) == 2) {
-      reaction[i-1] <- str_c(resp$results[[i]]$patient$reaction[[1]]
-                             $reactionmeddrapt, ", ",resp$results[[i]]$
-                               patient$reaction[[2]]$reactionmeddrapt)
+      reaction[i-1] <- str_c(
+        resp$results[[i]]$patient$reaction[[1]]$reactionmeddrapt, 
+        ", ",
+        resp$results[[i]]$patient$reaction[[2]]$reactionmeddrapt
+      )
     } else if(length(resp$results[[i]]$patient$reaction) == 1) {
       reaction[i-1] <- resp$results[[i]]$patient$reaction[[1]]$reactionmeddrapt
     } else {
@@ -95,6 +133,7 @@ get_fda_data <- function(startYear, endYear, numObservations) {
     
   }
   
+  # construct the tibble
   drug_tbl <- tibble(
     reportId = parse_number(reportId),
     patientAge = parse_number(patientAge),
@@ -106,6 +145,12 @@ get_fda_data <- function(startYear, endYear, numObservations) {
   drug_tbl
   
 }
+```
+
+### Using our Function
+Since the API limits the number of rows that can be returned, we make two requests to get all the drug effect data from 2000 to 2019.
+```{r}
+#| message: FALSE
 
 # Get the data tibbles from the API
 drugs <- get_fda_data(2010, 2019, 1000)
@@ -120,19 +165,20 @@ write.csv(drugs, "drugs_tbl.csv")
 
 ```
 
-
-Our Data:
+Here's what the result looks like:
 
 ```{r}
 #| message: FALSE
 drugs |> 
-  print(n = 6)
+  print(n = 12)
 ```
 
-## Using the Data
 
+## Using the Data
+Now that we have our data, we should do something with it! These tree maps will illustrate what the overall distribution among specific drugs looks like, as well as reveal any outliers.
 ```{r}
 #| message: FALSE
+#| warning: FALSE
 library(treemapify)
 
 
@@ -175,10 +221,11 @@ drugs |>
 
 ```
 
-These tree maps give some indication of which drugs caused the most serious side effects. In both plots, we can see that the distribution is relatively even among the drugs, as it seems that most of them only occur one or two times. Lipitor stands out as having the most incidents, and we can see that it also has one death associated with it in the second plot. This plot also reveals that Glivec, while it had appeared benign enough, actually caused the highest number of deaths in the data. 
+The plots give some indication of which drugs caused the most serious side effects. In both plots, we can see that the distribution is relatively even among the drugs, as it seems that most of them only occur one or two times. Lipitor stands out as having the most incidents, and we can see that it also has one death associated with it in the second plot. This plot also reveals that Glivec, while it had appeared benign before, actually caused the highest number of deaths in the data. 
 
 ```{r}
 #| message: FALSE
+#| warning: FALSE
 drugs |>
   filter(!is.na(patientAge) & patientAge < 100) |>
   ggplot(aes(x = patientAge)) +

@@ -1,6 +1,6 @@
 ---
 #title: "Dan E"
-image: grungehog.JPG
+image: grungehog.jpg
 toc: false
 about: 
   template: jolla

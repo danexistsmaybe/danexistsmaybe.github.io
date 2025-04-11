@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    - clouds
 
 website:
   title: "Home"
@@ -23,3 +25,5 @@ format:
     css: styles.css
     toc: true
     page-layout: full
+    includes:
+      after-body: crumpet.html

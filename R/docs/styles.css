@@ -10,3 +10,15 @@
   border: darkgrey 2px solid;
   background-color: rgba(150,150,150,.4);
 }
+
+.bg {
+	z-index: -6;
+	width: 100vw;
+	height: 500vh;
+	background-image: url("map.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: 0;
+	left: 0;
+}

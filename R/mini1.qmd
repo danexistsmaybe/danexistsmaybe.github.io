@@ -6,6 +6,45 @@ format:
     code-fold: true
 ---
 
+<!--<div class="rellax bg" data-rellax-speed="-6">
+</div>-->
+
+<script src="rellax.min.js"></script>
+<script>
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);     
+  max = Math.floor(max);    
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+let h = document.documentElement.scrollHeight;
+let w = document.documentElement.scrollWidth;
+for (var i=0; i<100; i+=getRandomInt(1,4)) {
+  
+  let C = document.createElement("div");
+  C.style.backgroundImage = 'url("./clouds/'+i+'.png")';
+  C.style.backgroundSize = 'contain';
+  C.style.backgroundRepeat = 'no-repeat';
+  C.style.height = getRandomInt(100, 500) + "px";
+  C.style.width = getRandomInt(100, 500) + "px";
+  C.style.zIndex = "-5";
+  C.style.top = getRandomInt(50, h - 400) + "px";
+  C.style.left = getRandomInt(-200,w) + "px";
+  C.setAttribute("class", "rellax");
+  C.setAttribute("data-relax-speed", "-"+getRandomInt(2,10));
+  C.style.position = "absolute";
+  
+  document.body.appendChild(C);
+  document.body.style.overflowX = "hidden";
+}
+
+  var rellax = new Rellax('.rellax');
+});
+</script>
+
+
 #### A project that uses mapping features from different libraries in R to create static and interactive choropleth plots.
 
 ```{r,message=FALSE,include=FALSE}
@@ -26,7 +65,7 @@ head(states)
 ## First Map: Prevalence of Depression Across the United States
 
 
-```{r, fig.alt="This is a choropleth map or plot of the United States. Each state is drawn out and colored according to its average prevalence of depression, which ranges from 16 to 29 percent. The states with the lowest rates of depression appear to be Nebraska and New Jersey, while the highest prevalence of depression occurs in Tennessee and West Virginia. In general, the pattern of prevalence of depression does not seem to be in a relationship with political trends, rural versus urban dynamics, nor coastal versus mainland geographical locations.", fig.width=8}
+```{r, fig.alt="This is a choropleth map or plot of the United States. Each state is drawn out and colored according to its average prevalence of depression, which ranges from 16 to 29 percent. The states with the lowest rates of depression appear to be Nebraska and New Jersey, while the highest prevalence of depression occurs in Tennessee and West Virginia. In general, the pattern of prevalence of depression does not seem to be in a relationship with political trends, rural versus urban dynamics, nor coastal versus mainland geographical locations.", fig.width=8, message=FALSE, warning=FALSE}
 # First
 
 # summary by state
@@ -61,7 +100,7 @@ chimera |>
 ## Second Map: Prevalence of Lack of Sleep Across the United States
 
 
-```{r, fig.width=8}
+```{r, fig.width=8, message=FALSE, warning=FALSE}
 # First
 AVG <- mean(PLACES_states$other)
 
@@ -91,7 +130,7 @@ This plot highlights the geographical divide between the states with a higher pr
 
 
 
-```{r,message=FALSE, include=FALSE}
+```{r,message=FALSE, include=FALSE, message=FALSE, warning=FALSE}
 # data
 
 library(tidyverse)
@@ -125,7 +164,7 @@ library(leaflet)
 
 ## First Map: Interactive
 
-```{r, message = FALSE}
+```{r, message=FALSE, warning=FALSE}
 # First
 
 # bins
@@ -170,7 +209,7 @@ leaflet(PLACES_states) |>
 
 # Second Map: Interactive
 
-```{r, message = FALSE}
+```{r, message=FALSE, warning=FALSE}
 # Second
 
 # bins
