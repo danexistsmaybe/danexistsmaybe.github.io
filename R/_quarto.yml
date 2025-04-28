@@ -8,16 +8,14 @@ website:
   title: "Home"
   navbar:
     left:
-      - href: https://danexistsmaybe.github.io/
-        text: Main Site
       - href: https://danexistsmaybe.github.io/poetry.html
         text: Poetry
-      - href: https://danexistsmaybe.github.io/R/docs
-        text: R Portfolio
       - href: mini1.qmd
         text: Mini Project 1
       - href: mini2.qmd
         text: Mini Project 2
+      - href: mini4.qmd
+        text: Mini Project 4
 
 format:
   html:
